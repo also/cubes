@@ -18,7 +18,7 @@ package com.ryanberdeen.cubes {
 
     public static const CUBE_START_Y:int = 2000;
 
-    var cubes:Array = [];
+    internal var cubes:Array = [];
     private var qeh:QuantumEventHandler;
     private var tween:TweenMax;
     private var colIndex:int = -1;
@@ -124,7 +124,7 @@ package com.ryanberdeen.cubes {
 
     private function replaceCube(rowIndex:int, colIndex:int, materials:MaterialsList):Cube {
       var cube:Cube = cubes[rowIndex][colIndex];
-      var newCube = createCube(materials);
+      var newCube:Cube = createCube(materials);
       newCube.copyPosition(cube);
       newCube.copyTransform(cube);
       scene.removeChild(cube);
